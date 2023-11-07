@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import styled from "styled-components";
 import { useUser } from "./useUser";
 
@@ -24,8 +23,8 @@ const Avatar = styled.img`
 
 function UserAvatar() {
   const { user } = useUser();
+  if (!user) return;
   const { fullName, avatar } = user.user_metadata;
-
   return (
     <StyledUserAvatar>
       <Avatar
